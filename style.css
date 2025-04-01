@@ -1,0 +1,379 @@
+@font-face {
+  font-family: 'Press Start';
+  src: url('img/prstartk.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: #FFF;
+  font-family: 'Press Start';
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 100px;
+  font-size: 24px;
+}
+
+header nav a {
+  transition: all 0.5s ease;
+}
+
+header nav a:hover {
+  color: #F9ED3F;
+  text-shadow: 0 0 10px #F9ED3F;
+}
+
+.home_section {
+  height: 90vh;
+}
+
+.pacman_logo {
+  width: 50%;
+  display: block;
+  margin: auto;
+  margin-top: 5%;
+}
+
+.home_section p {
+  font-size: 36px;
+  text-align: center;
+  margin-top: 35vh;
+  animation: blink 2s infinite;
+}
+
+.pacman {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background-image: url('img/Pacman.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 53%;
+  left: 35%;
+  animation: pacman-move 13s linear infinite;
+}
+
+.ghost {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: ghosts 13s linear infinite;
+}
+
+.ghost.pinky {
+  background-image: url('img/Pinky.png');
+  top: 53%;
+  left: 46%;
+}
+
+.ghost.inky {
+  background-image: url('img/Inky.png');
+  top: 53%;
+  left: 52%;
+}
+
+.ghost.blinky {
+  background-image: url('img/Blinky.png');
+  top: 53%;
+  left: 58%;
+}
+
+.ghost.clyde {
+  background-image: url('img/Clyde.png');
+  top: 53%;
+  left: 64%;
+}
+
+.home_section::after,
+.high_scores_section::after,
+.how_to_play_section::after {
+  content: "";
+  display: block;
+  border-bottom: 2px dotted #F9ED3F; 
+  width: 100%;
+  margin-top: 11%;
+}
+
+@keyframes pacman-move {
+  0% {
+      transform: scaleX(-1);
+  }
+  23% {
+      transform: translate(-73vw) scaleX(-1);
+  }
+  23.1% {
+      transform: translate(-73vw) scaleX(1);
+  }
+  75% {
+      transform: translate(70vw);
+  } 
+  75.1% {
+      transform: translate(70vw) scaleX(-1);
+  } 
+  99.9999% {
+      transform: scaleX(-1);
+  }
+}
+
+@keyframes ghosts {
+  23% {
+      transform: translate(-73vw);
+  }
+  23.1% {
+      transform: translate(-73vw) scaleX(-1);
+  }
+  75% {
+      transform: translate(70vw) scaleX(-1);
+  } 
+  75.1% {
+      transform: translate(70vw) scaleX(1);
+  } 
+  99.9999% {
+      transform: scaleX(1);
+  }
+}
+
+@keyframes blink {
+  0%, 50% {
+      opacity: 1;
+      visibility: visible;
+  }
+  50.01%, 100% {
+      opacity: 0;
+      visibility: hidden;
+  }
+}
+
+.high_scores_section {
+  height: 85vh;
+}
+
+.high_scores_section h2 {
+  color: #F9ED3F;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 6%;
+}
+
+.high_scores_section h3 {
+  text-align: center;
+  font-size: 34px;
+  margin-top: 3%;
+}
+
+.rankings {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.rankings p {
+  font-size: 30px;
+  margin-top: 50px;
+}
+
+.rankings ul {
+  list-style: none;
+  margin-top: 2%;
+  font-size: 28px;
+  margin-top: 55px;
+}
+
+.rankings ul li {
+  margin-top: 10px;
+}
+
+.rankings ul li:nth-child(1),
+li:nth-child(5),
+li:nth-child(9) {
+  color: #FFA002;
+}
+
+.rankings ul li:nth-child(2),
+li:nth-child(6),
+li:nth-child(10) {
+  color: #FF0401;
+}
+
+.rankings ul li:nth-child(3),
+li:nth-child(7) {
+  color: #01F8F8;
+}
+
+.rankings ul li:nth-child(4),
+li:nth-child(8) {
+  color: #FF60B0;
+}
+
+.how_to_play_section {
+  height: 100vh;
+}
+
+.pacman2 {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background-image: url('img/Pacman.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 225vh;
+  left: 35%;
+  animation: pacman_part2 13s linear infinite;
+}
+
+.ghost2 {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('img/Eaten.png');
+  animation: ghosts_part2 13s linear infinite;
+}
+
+.first_ghost { 
+  top: 225vh;
+  left: 46%;
+}
+
+.second_ghost {
+  top: 225vh;
+  left: 52%;
+}
+
+.third_ghost {
+  top: 225vh;
+  left: 58%;
+}
+
+.fourth_ghost {
+  top: 225vh;
+  left: 64%;
+}
+
+.how_to_play_section h2 {
+  text-align: center;
+  font-size: 36px;
+  padding-top: 27%;
+}
+
+.how_to_play_section p {
+  font-size: 30px;
+  text-align: center;
+  padding-top: 3%;
+  line-height: 1.2;
+}
+
+.how_to_play_section p span {
+  color: #FFD300;
+}
+
+@keyframes pacman_part2 {
+  23% {
+      transform: translate(70vw);
+  }
+  23.1% {
+      transform: translate(70vw) scaleX(-1);
+  }
+  75% {
+      transform: translate(-73vw) scaleX(-1);
+  } 
+  75.1% {
+      transform: translate(-73vw) scaleX(1);
+  } 
+}
+
+@keyframes ghosts_part2 {
+  23% {
+      transform: translate(70vw);
+  }
+  75% {
+      transform: translate(-73vw);
+  } 
+}
+
+.players_section {
+  height: 150vh;
+  padding-top: 15%;
+}
+
+.players_section p {
+  font-size: 30px;
+  text-align: center;
+  margin: 35px auto;
+}
+
+.player_card {
+  margin: 0 auto;
+  width: 50%;
+  display: flex;
+}
+
+.player_card img {
+  height: 75px;
+  transform: scaleX(-1);
+}
+
+.card {
+  width: 300px;
+  display: block;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.pts { 
+  padding-top: 5%;
+  display: flex;
+  width: 38%;
+  margin: 0 auto;
+}
+
+.pts2 {
+  padding-top: 5%;
+}
+
+.pts p {
+  display: block;
+}
+
+.img_eaten {
+  height: 75px;
+  margin: 0 10px;
+}
+
+.point1 {
+  height: 50px;
+  margin-right: auto;
+  margin-top: 3%;
+}
+
+.point2 {
+  height: 30px;
+  margin-right: 140px;
+  margin-top: 5%;
+  padding-top: 0%;
+}
+
+footer {
+  background-color: #000;
+  color: #FFF;
+  font-family: 'Press Start';
+  padding: 20px;
+  overflow-x: hidden;
+  text-align: center;
+  font-size: 10px;
+}
